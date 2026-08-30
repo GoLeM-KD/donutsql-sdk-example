@@ -24,5 +24,7 @@ yarn add donutsql
 pnpm add donutsql
 # or
 bun add donutsql
+```
 
-Note: Proper documentation is still in progress. Until the proper documentation is finished, please refer this example-project for guidance
+## NOTICE!
+Proper documentation is still in progress. Until the proper documentation is finished, please refer this example-project for guidance

@@ -66,7 +66,7 @@ export default function Page() {
         />
       </div>
 
-        {/* Inputs for Table_one */}
+        {/* Inputs for Table_two */}
       <div className="px-2 py-4 border-1 border-black flex flex-col gap-2">
         <p>TABLE_TWO</p>
         <input

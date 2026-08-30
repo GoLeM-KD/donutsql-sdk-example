@@ -19,8 +19,8 @@ bun dev
 ```bash
 npm install donutsql
 # or
-yarn install donutsql
+yarn add donutsql
 # or
-pnpm install donutsql
+pnpm add donutsql
 # or
-bun install donutsql
+bun add donutsql

@@ -15,31 +15,28 @@ export async function POST(req) {
         and you can do multiple transactions as below.
     */
     await pool.transaction((tx) => {
-      tx.query(`INSERT INTO TABLE_ONE(name) VALUES (@name)`, {
+      tx.query(`INSERT INTO student(name, age) VALUES (@name, @age)`, {
+        age: {
+          type: DonutTypes.Int(),
+          value: transactionDatas.table1.age,
+        },
         name: {
           type: DonutTypes.NVarChar(),
           value: transactionDatas.table1.name,
         },
       });
 
-      tx.query(
-        `INSERT INTO TABLE_TWO(subject, teacher) VALUES (@sub, @teacher)`,
-        {
-          sub: {
-            type: DonutTypes.Text(),
-            value: transactionDatas.table2.subject,
-          },
-          teacher: {
-            type: DonutTypes.Int(),
-            value: transactionDatas.table2.teacher,
-          },
+      tx.query(`INSERT INTO subject(name) VALUES (@sub)`, {
+        sub: {
+          type: DonutTypes.Text(),
+          value: transactionDatas.table2.subName,
         },
-      );
+      });
 
-      tx.query(`DELETE FROM TABLE_ONE WHERE id = @param`, {
+      tx.query(`DELETE FROM subject WHERE subjectID = @param`, {
         param: {
           type: DonutTypes.Int(),
-          value: transactionDatas.table1.id,
+          value: transactionDatas.table2.id,
         },
       });
     });

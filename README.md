@@ -2,25 +2,26 @@ This is an Example of use of donutsql SDK
 
 ## Getting Started
 
-First, run the development server:
+Clone the repository, install the required packages, and run the project using the commands below.
 
 ```bash
+git https://github.com/GoLeM-KD/donutsql-sdk-example
+cd donutsql-sdk-example
+npm install
 npm run dev
 # or
+git https://github.com/GoLeM-KD/donutsql-sdk-example
+cd donutsql-sdk-example
+yarn
 yarn dev
 # or
+git https://github.com/GoLeM-KD/donutsql-sdk-example
+cd donutsql-sdk-example
+pnpm install
 pnpm dev
 # or
+git https://github.com/GoLeM-KD/donutsql-sdk-example
+cd donutsql-sdk-example
+bun install
 bun dev
 ```
-
-## Install donutsql
-
-```bash
-npm install donutsql
-# or
-yarn add donutsql
-# or
-pnpm add donutsql
-# or
-bun add donutsql

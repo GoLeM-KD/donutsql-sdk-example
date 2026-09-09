@@ -10,7 +10,7 @@ export async function GET(req) {
   try {
     const pool = await connectDatabase();
 
-    const results = await pool.query("SELECT * FROM TABLE_ONE"); // You can call the query function without any parameter like this
+    const results = await pool.query("SELECT * FROM student"); // You can call the query function without any parameter like this
     // ex:- query('your query')
     console.log("RESULTSSS..", results.result.recordset);
     return new Response(
@@ -31,15 +31,25 @@ export async function POST(req) {
   try {
     const FormData = await req.formData();
     const name = FormData.get("name");
+    const age = FormData.get("age");
+    const address = FormData.get("address") || null
 
     const pool = await connectDatabase();
 
     // Here, I have used a parameter named p1.
-    await pool.query("INSERT INTO TABLE_ONE(Name) VALUES (@p1)", {
-      p1: {
+    await pool.query("INSERT INTO student(name, age, address) VALUES (@name, @age, @address)", {
+      name: {
         type: DonutTypes.VarChar(),
         value: name,
       },
+      age: {
+        type: DonutTypes.Int(),
+        value: age
+      },
+      address: {
+        type: DonutTypes.Text(),
+        value: address
+      }
     });
 
     /* 
@@ -78,7 +88,7 @@ export async function DELETE(req) {
 
     const pool = await connectDatabase();
 
-    await pool.query("DELETE FROM TABLE_ONE WHERE id = @id", {
+    await pool.query("DELETE FROM student WHERE id = @id", {
       id: {
         type: DonutTypes.Int(),
         value: id,

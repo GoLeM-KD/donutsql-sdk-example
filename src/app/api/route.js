@@ -36,17 +36,17 @@ export async function POST(req) {
 
     const pool = await connectDatabase();
 
-    // Here, I have used a parameter named p1.
-    await pool.query("INSERT INTO student(name, age, address) VALUES (@name, @age, @address)", {
-      name: {
+    // Here, I have used three parameters: param1, param2, and param3.
+    await pool.query("INSERT INTO student(name, age, address) VALUES (@param1, @param2, @param3)", {
+      param1: {
         type: DonutTypes.VarChar(),
         value: name,
       },
-      age: {
+      param2: {
         type: DonutTypes.Int(),
         value: age
       },
-      address: {
+      param3: {
         type: DonutTypes.Text(),
         value: address
       }

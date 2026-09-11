@@ -70,6 +70,7 @@ export default function Home() {
   return (
     <div>
       <Link href="/Transaction" className="underline textx-black font-bold">Try transaction</Link>
+      <Link href="/Procedure" className="underline textx-black font-bold">Try Execute procedure</Link>
       <table className="border-1 border-black mb-4">
         <thead>
           <tr className="border-1 border-black">
